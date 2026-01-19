@@ -1,4 +1,9 @@
-title: 我的学习笔记
-author: [你的名字]
-description: 记录生物信息学与植物基因组学的学习历程
+# _config.yml
+title: 您的博客标题
 theme: minima
+
+# 手动指定导航栏显示的页面及其顺序
+header_pages:
+  - about.md
+  - projects.md
+  - notes.md
