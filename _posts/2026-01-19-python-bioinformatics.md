@@ -17,6 +17,7 @@ categories: 数据处理
 下面的代码演示了如何使用 `pandas` 库快速过滤低表达基因，并对数据进行初步的标准化：
 
 ```python
+
 import pandas as pd
 import numpy as np
 
@@ -37,4 +38,5 @@ def clean_expression_matrix(file_path):
 
 # 示例调用
 # processed_df = clean_expression_matrix("count_matrix.csv")
+
 ```
