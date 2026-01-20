@@ -1,0 +1,28 @@
+<script>
+document.querySelectorAll('.highlight').forEach((block) => {
+  // 1. 获取代码语言（从 class 中提取，如 language-python）
+  const langClass = block.parentElement.className || '';
+  const lang = langClass.replace('language-', '').replace('highlight', '').trim() || 'code';
+
+  // 2. 创建顶部语言标签
+  const header = document.createElement('div');
+  header.className = 'code-header';
+  header.innerText = lang;
+  block.appendChild(header);
+
+  // 3. 创建复制按钮
+  const button = document.createElement('button');
+  button.className = 'copy-button';
+  button.innerText = 'Copy';
+  
+  button.addEventListener('click', () => {
+    const code = block.querySelector('code').innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      button.innerText = 'Copied!';
+      setTimeout(() => { button.innerText = 'Copy'; }, 2000);
+    });
+  });
+  
+  block.appendChild(button);
+});
+</script>
